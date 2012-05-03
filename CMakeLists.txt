@@ -21,4 +21,4 @@ RegionSelectionWidget.cpp
 HistogramWidget.cpp
 Layer.cpp
 Helpers.cpp ${MOCSrcs} ${UISrcs})
-TARGET_LINK_LIBRARIES(InteractiveRegionHistogramViewer ${VTK_LIBRARIES} QVTK ${QT_LIBRARIES} ${ITK_LIBRARIES})
+TARGET_LINK_LIBRARIES(InteractiveRegionHistogramViewer ${VTK_LIBRARIES} ${QT_LIBRARIES} ${ITK_LIBRARIES})

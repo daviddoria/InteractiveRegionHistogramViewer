@@ -22,13 +22,11 @@ void ITKImageToVTKRGBImage(const TImage* const image, vtkImageData* const output
     }
 
   // Setup and allocate the image data
-  outputImage->SetNumberOfScalarComponents(3);
-  outputImage->SetScalarTypeToUnsignedChar();
   outputImage->SetDimensions(image->GetLargestPossibleRegion().GetSize()[0],
                              image->GetLargestPossibleRegion().GetSize()[1],
                              1);
 
-  outputImage->AllocateScalars();
+  outputImage->AllocateScalars(VTK_UNSIGNED_CHAR, 3);
 
   // Copy all of the input image pixels to the output image
   itk::ImageRegionConstIteratorWithIndex<TImage> imageIterator(image,image->GetLargestPossibleRegion());
